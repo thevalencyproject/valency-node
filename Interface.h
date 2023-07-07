@@ -16,11 +16,16 @@ private:
     FileReader reader;
     FileWriter writer;
     NodeFunctions node;
+    NodeFunctions wallet;       // Used to generate the key pair when logging in
     AESEncryption aes(256);
 
-    std::string privateKey;     // Read from a file on login (AES encrypted using private key)
-    std::string publicKey;      // Read from a file on login (AES encrypted using private key)
-    double stakedVLNC;          // Read from a file on login (AES encrypted using private key)
+    std::string privateKey;
+    std::string publicKey;
+
+    std::string vlncFileType = ".vlnc";
+    std::string stakedVLNCFilePath = "stakedVLNC-";     // The file path to the stakedVLNC file (minus publickey for individual identification)
+    double stakedVLNC;                                  // Read from a file on login (AES encrypted using private key)
+    void getStakedVLNC();                               // Reads from the stakedVLNCFilePath after login, decrypts, and sets stakedVLNC
 
     // CUSTOM CONSOLE-UI TEXT
     std::vector<std::string> headerText{"{THE VALENCY NETWORK}", "Node"};    // Header
@@ -36,17 +41,17 @@ private:
 
     std::string nodeIsRunningText = "NODE IS RUNNING";
 
-    std::vector<std::string> newConnectionText(std::string ipAddress);
-
-    std::vector<std::string> transactionReceived(std::string ipAddress);
-
     std::vector<std::string> transactionVerified(std::string time, std::string date, unsigned int numOfVerificationNodes, double verificationReward);
+
+    // UI Interface Functions
+    void login();
+    bool chooseDisplayData();    // Allows the user to choose if they want to display data
+    void displayData();          // Constantly Looping Function
 
 public:
     Interface() {};
 
     void run();
 };
-
 
 #endif
