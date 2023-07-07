@@ -78,7 +78,7 @@ void Interface::run() {
     getStakedVLNC();
 
     
-    node.run();     // Run the backend for the node (NodeFunctions framework from Valency Core) - IN FUTURE THIS IS RUN ON ANOTHER THREAD
+    std::thread backend(node.run());     // Run the backend for the node (NodeFunctions framework from Valency Core) - run on another thread
 
     if(chooseDisplayData())
         displayData();

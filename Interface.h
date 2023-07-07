@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include <thread>
 #include "valency-core/ui/console-ui/ConsoleUI.h"
 #include "valency-network/node-functions/NodeFunctions.h"
 #include "valency-core/file-recognition/file-writer/FileWriter.h"
