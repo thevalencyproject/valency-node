@@ -57,10 +57,10 @@ bool Interface::chooseDisplayData() {
 
 void Interface::displayData() {
     ui.message(nodeIsRunningText);
-    KnownTransactionDetails details;
-    KnownTransactionDetails comparison;
+    NodeTransactionInfo details;
+    NodeTransactionInfo comparison;
     while(1) {
-        comparison = node.getKnownTransactionDetails();
+        comparison = node.getNodeTransactionInfo();
         if(comparison != details) {
             details = comparison;
             ui.message(transactionVerified(details.time, details.date, details.numOfVerificationNodes, details.verificationReward));
