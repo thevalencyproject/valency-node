@@ -6,6 +6,7 @@
 #include <thread>
 #include "valency-core/ui/console-ui/ConsoleUI.h"
 #include "valency-network/node-functions/NodeFunctions.h"
+#include "valency-network/structures/NodeTransactionInfo.h"
 #include "valency-core/file-recognition/file-writer/FileWriter.h"
 #include "valency-core/file-recognition/file-reader/FileReader.h"
 #include "valency-core/cryptography/aes-encryption/AES-Encryption.h"
