@@ -1,3 +1,6 @@
+/* This file is a part of The Valency Project which is released under the GNU Lesser General Public License v2.1
+   Go to https://github.com/thevalencyproject/valency-node/blob/main/LICENSE for further license details.        */
+
 #include "Interface.h"
 
 
@@ -57,10 +60,10 @@ bool Interface::chooseDisplayData() {
 
 void Interface::displayData() {
     ui.message(nodeIsRunningText);
-    NodeTransactionInfo details;
-    NodeTransactionInfo comparison;
+    KnownTransactionDetails details;
+    KnownTransactionDetails comparison;
     while(1) {
-        comparison = node.getNodeTransactionInfo();
+        comparison = node.getKnownTransactionDetails();
         if(comparison != details) {
             details = comparison;
             ui.message(transactionVerified(details.time, details.date, details.numOfVerificationNodes, details.verificationReward));

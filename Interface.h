@@ -1,3 +1,6 @@
+/* This file is a part of The Valency Project which is released under the GNU Lesser General Public License v2.1
+   Go to https://github.com/thevalencyproject/valency-node/blob/main/LICENSE for further license details.        */
+
 #ifndef INTERFACE_H
 #define INTERFACE_H
 
@@ -6,7 +9,6 @@
 #include <thread>
 #include "valency-core/ui/console-ui/ConsoleUI.h"
 #include "valency-network/node-functions/NodeFunctions.h"
-#include "valency-network/structures/NodeTransactionInfo.h"
 #include "valency-core/file-recognition/file-writer/FileWriter.h"
 #include "valency-core/file-recognition/file-reader/FileReader.h"
 #include "valency-core/cryptography/aes-encryption/AES-Encryption.h"
